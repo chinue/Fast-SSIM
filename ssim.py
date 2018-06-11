@@ -9,13 +9,13 @@ import ctypes
 import re
 
 ssim_dll_path = os.path.split(os.path.realpath(__file__))[0]
-ssim_dll_name = 'ssim.dll' if(os.name=='nt') else 'ssim.so'
+ssim_dll_name = 'ssim.dll' if(os.name=='nt') else 'libssim.so'
 
 class Loader:
     
     if(os.path.exists(os.path.join(ssim_dll_path, ssim_dll_name))):
         print_debug("load '%s'"%(os.path.join(ssim_dll_path, ssim_dll_name)), textColor='golden')
-        dll = np.ctypeslib.load_library('ssim', ssim_dll_path)
+        dll = np.ctypeslib.load_library(ssim_dll_name, ssim_dll_path)
     else:
         print_debug("load '%s' FAILED"%(os.path.join(ssim_dll_path, ssim_dll_name)), textColor='red')
 
