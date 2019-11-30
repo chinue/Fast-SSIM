@@ -109,6 +109,9 @@ if __name__ == '__main__':
     x = scipy.misc.imread(os.path.join(path, '0.jpg'))
     y = scipy.misc.imread(os.path.join(path, '1.jpg'))
 
+    saveData('x_1920x1080.RGB', x)
+    saveData('y_1920x1080.RGB', y)
+
     #x = x.astype('float32')/255
     #y = y.astype('float32')/255
     print2(x.dtype)

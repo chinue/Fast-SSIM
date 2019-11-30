@@ -1,0 +1,3 @@
+g++ -fPIC ssim.cpp -O3 -lm -DNDEBUG -msse4  -shared -o libfilter.so
+
+g++ ssim.cpp main.cpp -O3 -lm -DNDEBUG -msse4  -o test

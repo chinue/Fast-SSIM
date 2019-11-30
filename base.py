@@ -332,6 +332,15 @@ def saveRaw(a, filename, isPrint=True):
     fp.close()
     return True
 
+def saveData(filename, a, isPrint=True):
+    fp = open(filename, 'wb')
+    if(fp==None):
+        print2("Can not create '%s'"%filename, textColor='red')
+        return False
+    fp.write(a.tobytes())
+    fp.close()
+    return True
+
 def saveArray(a, filename, fmt="%6.3f ", isPrint=True):
     a = np.asarray(a, np.float32)
     s = a.shape
